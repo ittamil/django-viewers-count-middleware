@@ -1,3 +1,5 @@
+from django.db.models import F
+
 from .models import ViewersCount
 
 
@@ -9,7 +11,7 @@ class ViewersCountMiddleware:
         ip_address = self.get_client_ip(request)
 
         viewer, created = ViewersCount.objects.get_or_create(path=request.path, ipaddress=ip_address)
-        viewer.views += 1
+        viewer.views = F('views') + 1
         viewer.save()
 
         response = self.get_response(request)
