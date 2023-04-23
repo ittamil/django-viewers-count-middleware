@@ -21,7 +21,7 @@ Quick start
     ]
 
 
-2. Add "ViewerCountMiddleware" to your INSTALLED_APPS setting like this::
+2. Add "ViewerCountMiddleware" to your MIDDLEWARE setting like this::
 
 
     MIDDLEWARE = [
@@ -36,6 +36,6 @@ Quick start
 3. Run to create the viewerscount models.
 
 
-        python manage.py migrate
+        python manage.py migrate viewers_count
 
 

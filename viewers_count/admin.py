@@ -1,5 +1,5 @@
 from django.contrib import admin
-from request_viewer_counts_middleware.models import *
+from .models import ViewersCount
 
 
 @admin.register(ViewersCount)
